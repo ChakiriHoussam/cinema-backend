@@ -149,7 +149,7 @@ public class CinemaInitServiceImp implements IcinemaInitService {
 			double[] durees= new double[] {1,1.5,2.5,3};
 			List<Categorie> categories = categorieRepository.findAll();
 			// TODO Auto-generated method stub
-		 Stream.of("the good the bad the ugly","the wolf of the wall street","aviator","Blood Diamond","the revenant","Prison Break","Django unchained","Inception","Shutter Island","the great gatsby")
+		 Stream.of("mission impossible","12 hommes en colere","transporter","Sully","the great hack","Tenet","Word War","GhostsWar","Le Parrain","les eigneur de sanneaux ","GreenBook","John Wick 3","Fast & Furious Hobbs & Shaw","John Wick 2","John Wick", "the equalizer 2", "the equalizer")
 		 .forEach(titreFilm->{
 			Film film =new Film();
 			film.setTitre(titreFilm);

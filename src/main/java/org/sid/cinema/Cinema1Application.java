@@ -16,6 +16,7 @@ public class Cinema1Application implements CommandLineRunner {
 
 	@Autowired
 	private IcinemaInitService cinemaInitService;
+
 	@Autowired
 	private RepositoryRestConfiguration restConfiguration;
 	

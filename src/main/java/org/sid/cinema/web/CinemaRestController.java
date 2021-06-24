@@ -31,15 +31,16 @@ public class CinemaRestController {
 	private FilmRepository filmRepository;
 	@Autowired
 	 private TicketRepository ticketRepository;
-	@GetMapping(path="/imageFilm/{id}",produces=MediaType.IMAGE_JPEG_VALUE)
 	
+	@GetMapping(path="/imageFilm/{id}",produces=MediaType.IMAGE_JPEG_VALUE)
 	public byte[] image(@PathVariable(name="id")Long id) throws IOException {
 		Film f= filmRepository.findById(id).get();
 		String photoName =f.getPhoto();
-		File file= new File(System.getProperty("user.home")+"/cinema/images/"+photoName);
+		File file= new File(System.getProperty("user.home")+"/cinema/images2/"+photoName);
 		Path path =Paths.get(file.toURI());
 		return Files.readAllBytes(path);	
 	}
+	
 	@PostMapping("/payerTickets")
 	@Transactional
 	public List<Ticket> payetTickets(@RequestBody TicketForm ticketForm) {
@@ -58,6 +59,7 @@ public class CinemaRestController {
 	}
 
 }
+
 @Data
 class TicketForm {
 		private String nomclient;
